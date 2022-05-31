@@ -14,15 +14,20 @@ const Semaforo = () => {
 			claseRojo === "luz-semaforo"
 				? setClaseRojo("luz-semaforo semaforo-iluminado-rojo")
 				: setClaseRojo("luz-semaforo");
-			// if(claseAmbar.classLis)
+			setClaseAmbar("luz-semaforo");
+			setClaseVerde("luz-semaforo");
 		} else if (e.target.className.includes("luz-ambar")) {
 			claseAmbar === "luz-semaforo"
 				? setClaseAmbar("luz-semaforo semaforo-iluminado-ambar")
 				: setClaseAmbar("luz-semaforo");
+			setClaseRojo("luz-semaforo");
+			setClaseVerde("luz-semaforo");
 		} else if (e.target.className.includes("luz-verde")) {
 			claseVerde === "luz-semaforo"
 				? setClaseVerde("luz-semaforo semaforo-iluminado-verde")
 				: setClaseVerde("luz-semaforo");
+			setClaseRojo("luz-semaforo");
+			setClaseAmbar("luz-semaforo");
 		}
 	};
 

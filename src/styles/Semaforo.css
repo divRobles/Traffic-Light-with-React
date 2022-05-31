@@ -1,6 +1,7 @@
 .container-semaforo {
     width: 100vw;
     height: 100vh;
+    min-height: 575px;
     background-image: url('https://images.pexels.com/photos/46287/traffic-lights-road-sign-red-yellow-46287.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
     background-position: center;
     background-repeat: no-repeat;
@@ -11,28 +12,25 @@
 }
 
 .container-semaforo div[class*='luz-semaforo'] {
-    /* height: 50px; */
-    /* width: 50px; */
+    height: 114px;
+    width: 121px;
     border-radius: 50%;
+    margin-top: 21px;
+    margin-bottom: 47px;
+}
+
+.luz-roja {
+    background-color: #aa1d1323;
+    margin-right: 5px;
+}
+
+.luz-ambar {
+    background-color: r#D16818;
+    transform: scale(0.8);
+}
+
+.luz-verde {
     background-color: rgba(0, 255, 255, 0.226);
-    /* margin: 150px 0; */
-    /* margin-top: 150px; */
-    padding: 100px;
-}
-
-.luz-roja{
-    /* background-color: transparent; */
-        background-color: rgba(0, 255, 255, 0.226);
-}
-
-.luz-ambar{
-    /* background-color: transparent; */
-        background-color: rgba(0, 255, 255, 0.226);
-}
-
-.luz-verde{
-    /* background-color: transparent; */
-        background-color: rgba(0, 255, 255, 0.226);
 }
 
 
@@ -53,4 +51,3 @@
     -moz-box-shadow: 10px 10px 104px 0px rgb(21, 255, 0);
     box-shadow: 10px 10px 104px 0px rgb(21, 255, 0);
 }
-
