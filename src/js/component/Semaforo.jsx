@@ -6,28 +6,44 @@ import "../../styles/Semaforo.css";
 const Semaforo = () => {
 	const [claseRojo, setClaseRojo] = useState("luz-semaforo");
 	const [claseAmbar, setClaseAmbar] = useState("luz-semaforo");
-	const [claseVerde, setClaseVerde] = useState("luz-semaforo");
+	const [claseVerde, setClaseVerde] = useState(
+		"luz-semaforo semaforo-iluminado-verde"
+	);
 
 	const cambiarClase = (e) => {
-		console.log(e.target.className);
+		const sistemaLuces = (clase, set, set2, set3, claseSemaforo) => {
+			clase === "luz-semaforo"
+				? set(`luz-semaforo ${claseSemaforo}`)
+				: set(`luz-semaforo ${claseSemaforo}`);
+
+			set2("luz-semaforo");
+			set3("luz-semaforo");
+		};
+
 		if (e.target.className.includes("luz-roja")) {
-			claseRojo === "luz-semaforo"
-				? setClaseRojo("luz-semaforo semaforo-iluminado-rojo")
-				: setClaseRojo("luz-semaforo");
-			setClaseAmbar("luz-semaforo");
-			setClaseVerde("luz-semaforo");
+			sistemaLuces(
+				claseRojo,
+				setClaseRojo,
+				setClaseAmbar,
+				setClaseVerde,
+				"semaforo-iluminado-rojo"
+			);
 		} else if (e.target.className.includes("luz-ambar")) {
-			claseAmbar === "luz-semaforo"
-				? setClaseAmbar("luz-semaforo semaforo-iluminado-ambar")
-				: setClaseAmbar("luz-semaforo");
-			setClaseRojo("luz-semaforo");
-			setClaseVerde("luz-semaforo");
+			sistemaLuces(
+				claseAmbar,
+				setClaseAmbar,
+				setClaseRojo,
+				setClaseVerde,
+				`semaforo-iluminado-ambar`
+			);
 		} else if (e.target.className.includes("luz-verde")) {
-			claseVerde === "luz-semaforo"
-				? setClaseVerde("luz-semaforo semaforo-iluminado-verde")
-				: setClaseVerde("luz-semaforo");
-			setClaseRojo("luz-semaforo");
-			setClaseAmbar("luz-semaforo");
+			sistemaLuces(
+				claseVerde,
+				setClaseVerde,
+				setClaseRojo,
+				setClaseAmbar,
+				`semaforo-iluminado-verde`
+			);
 		}
 	};
 
